@@ -1,0 +1,1 @@
+INSERT INTO animals VALUES (1, 'dog', '2024-07-07 00:00:00');

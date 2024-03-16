@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>animals</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>名前</th>
+        <th>生年月日</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="animal: ${animals}">
+        <td th:text="${animal.getName()}" />
+        <td th:text="${animal.getBirthDate()}" />
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
