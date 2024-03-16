@@ -16,7 +16,7 @@ public class PlaywrightTest {
             var page = browser.newPage();
             page.navigate("http://playwright.dev");
 
-            assertThat(page).hasTitle(Pattern.compile("Playwright"));
+            assertThat(page).hasTitle(Pattern.compile("Playwriht"));
 
         }
     }
