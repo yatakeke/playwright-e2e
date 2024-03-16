@@ -1,5 +1,4 @@
 name: ci on push
-run-name: testing-every-push
 on: [push]
 jobs:
   unittest:
