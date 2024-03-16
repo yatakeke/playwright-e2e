@@ -14,9 +14,9 @@ public class PlaywrightTest {
         try (Playwright playwright = Playwright.create()) {
             var browser = playwright.chromium().launch();
             var page = browser.newPage();
-            page.navigate("http://playwright.dev");
+            page.navigate("https://playwright.dev");
 
-            assertThat(page).hasTitle(Pattern.compile("Playwriht"));
+            assertThat(page).hasTitle(Pattern.compile("Playwright"));
 
         }
     }
