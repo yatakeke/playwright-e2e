@@ -4,5 +4,8 @@ jobs:
   unittest:
     runs-on: ubuntu-latest
     steps:
-      - name: run all unittest
-        run: docker compose up --build
+      - uses: actions/checkout@v4
+      - name: run unittest
+        uses: isbang/compose-action@v1.5.1
+        with:
+          compose-file: "./docker-compose.yaml"
