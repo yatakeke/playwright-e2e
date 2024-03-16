@@ -11,6 +11,10 @@ java {
     sourceCompatibility = '17'
 }
 
+sourceSets {
+    e2eTest
+}
+
 repositories {
     mavenCentral()
 }
@@ -19,16 +23,25 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    testImplementation 'com.microsoft.playwright:playwright:1.42.0'
     runtimeOnly 'org.postgresql:postgresql'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testImplementation 'org.springframework.boot:spring-boot-testcontainers'
-    testImplementation 'org.testcontainers:junit-jupiter'
     testImplementation "com.google.truth:truth:1.4.2"
+    e2eTestImplementation 'com.microsoft.playwright:playwright:1.42.0'
+    e2eTestImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
 }
 
 tasks.named('test', Test) {
     useJUnitPlatform()
+    testLogging {
+        events "passed", "failed"
+    }
+}
+
+task e2eTest(type: Test) {
+    println("hello, World")
+    useJUnitPlatform()
+    testClassesDirs = sourceSets.e2eTest.output.classesDirs
+    classpath = sourceSets.e2eTest.runtimeClasspath
     testLogging {
         events "passed", "failed"
     }

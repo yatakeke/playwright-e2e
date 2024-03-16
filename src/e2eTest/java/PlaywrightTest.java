@@ -1,5 +1,3 @@
-package com.yatakeke.playwright;
-
 import com.microsoft.playwright.Playwright;
 import org.junit.jupiter.api.Test;
 
