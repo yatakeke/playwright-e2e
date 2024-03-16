@@ -1,10 +1,21 @@
 version: '3'
 services:
-  postgres:
-    container_name: db
+  db:
     image: postgres:latest
     ports:
       - "5432:5432"
     environment:
       POSTGRES_USER: "postgres"
       POSTGRES_PASSWORD: "postgres"
+  e2e:
+    build:
+      context: .
+      dockerfile: ./dockerfiles/e2e/Dockerfile
+    volumes:
+      - ./src:/app/src
+    environment:
+      POSTGRES_URL: "jdbc:postgresql://db:5432/postgres"
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
