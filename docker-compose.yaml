@@ -15,7 +15,7 @@ services:
   db:
     image: postgres:latest
     volumes:
-      - "./src/main/resources/database:/docker-entrypoint-initdb.d"
+      - "./src/test/resources/database:/docker-entrypoint-initdb.d"
     ports:
       - "5432:5432"
     environment:
