@@ -43,5 +43,7 @@ task e2eTest(type: Test) {
     classpath = sourceSets.e2eTest.runtimeClasspath
     testLogging {
         events "passed", "failed"
+        showStackTraces true
+        exceptionFormat = 'full'
     }
 }
