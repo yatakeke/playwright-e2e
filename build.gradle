@@ -37,7 +37,8 @@ tasks.named('test', Test) {
     }
 }
 
-task e2eTest(type: Test) {
+
+tasks.register('e2eTest', Test) {
     useJUnitPlatform()
     testClassesDirs = sourceSets.e2eTest.output.classesDirs
     classpath = sourceSets.e2eTest.runtimeClasspath
