@@ -37,9 +37,9 @@ public class AnimalListPageTest {
     @Test
     public void showAllAnimals() {
         page.navigate("http://localhost:8080/animals");
-        var firstAnimalId = page.locator("id=animal-id");
-        var firstAnimalName = page.locator("id=animal-name");
-        assertThat(firstAnimalId).containsText("1");
+        var firstAnimalId = page.locator(".animal-id");
+        var firstAnimalName = page.locator(".animal-name");
+        assertThat(firstAnimalId).containsText("2");
         assertThat(firstAnimalName).containsText("dog");
     }
 }

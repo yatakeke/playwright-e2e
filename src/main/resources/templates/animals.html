@@ -8,14 +8,14 @@
 <table>
     <thead>
     <tr>
-        <th>名前</th>
-        <th>生年月日</th>
+        <th>ID</th>
+        <th>name</th>
     </tr>
     </thead>
     <tbody>
     <tr th:each="animal: ${animals}">
-        <td th:text="${animal.getName()}" />
-        <td th:text="${animal.getBirthDate()}" />
+        <td class="animal-id" th:text="${animal.getId()}" />
+        <td class="animal-name" th:text="${animal.getName()}" />
     </tr>
     </tbody>
 </table>
