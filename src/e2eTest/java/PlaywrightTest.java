@@ -1,13 +1,8 @@
-import com.microsoft.playwright.Browser;
-import com.microsoft.playwright.BrowserContext;
-import com.microsoft.playwright.Page;
-import com.microsoft.playwright.Playwright;
+import com.microsoft.playwright.*;
 import org.junit.jupiter.api.*;
 
-import java.util.regex.Pattern;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class PlaywrightTest {
@@ -40,10 +35,8 @@ public class PlaywrightTest {
     }
 
     @Test
-    public void trialTest() {
-
-        page.setContent("<input id='checkbox' type='checkbox'></input>");
-        page.locator("input").check();
-        assertTrue((Boolean) page.evaluate("() => window['checkbox'].checked"));
+    public void topPageTest() {
+        page.navigate("http://localhost:8080/");
+        assertThat(page.locator("p")).containsText("Hello");
     }
 }
