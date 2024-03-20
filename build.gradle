@@ -38,10 +38,6 @@ tasks.named('test', Test) {
 }
 
 task e2eTest(type: Test) {
-    dependsOn "bootRun"
-    // TODO: main taskを実行した後にtestが走るように修正
-    // TODO: applicationが動いた後にtestが走るようにする
-    println "hello, World"
     useJUnitPlatform()
     testClassesDirs = sourceSets.e2eTest.output.classesDirs
     classpath = sourceSets.e2eTest.runtimeClasspath
