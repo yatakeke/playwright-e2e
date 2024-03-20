@@ -6,7 +6,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: run unittest
-        uses: isbang/compose-action@v1.5.1
+        uses: adambirds/docker-compose-action@v1.3.0
         with:
           compose-file: "./docker-compose.yaml"
-    # FIXME: if test failed, ci judges success
+          test-container: "app"
+          test-command: "gradle test"
