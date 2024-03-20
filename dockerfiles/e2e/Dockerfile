@@ -7,7 +7,7 @@ COPY . .
 
 RUN chmod u+x gradlew
 
-ENTRYPOINT ["./gradlew", "test"]
+CMD ["./gradlew", "e2eTest"]
 
 # FIXME: install gradle every building
 # FIXME: install browser dev tool for playwright
